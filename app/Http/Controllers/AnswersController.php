@@ -64,6 +64,10 @@ class AnswersController extends Controller
      */
     public function destroy(Question $question, Answer $answer)
     {
-        dd("called destroy");
+        $this->authorize('delete', $answer);
+
+        $answer->delete();
+
+        return back()->with('success', 'Your answer has been removed');
     }
 }
