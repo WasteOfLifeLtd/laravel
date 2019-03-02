@@ -27,3 +27,6 @@ Route::get('/questions/{question}/answers/{answer}/edit', 'AnswersController@edi
 Route::patch('/questions/{question}/answers/{answer}/update', 'AnswersController@update')->name('answers.update');
 Route::delete('/questions/{question}/answers/{answer}/destroy', 'AnswersController@destroy')->name('answers.destroy');
 Route::post('/answers/{answer}/accept', 'AcceptAnswerController')->name('answers.accept');
+
+Route::post('/questions/{question}/favorites', 'FavoritesController@store')->name('questions.favorite');
+Route::delete('/questions/{question}/favorites', 'FavoritesController@destroy')->name('questions.unfavorite');
